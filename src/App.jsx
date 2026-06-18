@@ -36,6 +36,7 @@ function Logo({ textFill = 'white' }) {
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -43,19 +44,38 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
+    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}${menuOpen ? ' navbar--open' : ''}`}>
       <div className="nav-container">
-        <a href="/" className="nav-logo">
+        <a href="/" className="nav-logo" onClick={closeMenu}>
           <Logo textFill="white" />
         </a>
-        <ul className="nav-links">
-          <li><a href="#what-we-do">What we do</a></li>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#who-we-serve">Who we serve</a></li>
-          <li><a href="#vision">Vision</a></li>
-        </ul>
-        <button className="nav-cta">Book a call</button>
+        <button
+          className="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <div className="nav-menu">
+          <ul className="nav-links">
+            <li><a href="#what-we-do" onClick={closeMenu}>What we do</a></li>
+            <li><a href="#how-it-works" onClick={closeMenu}>How it works</a></li>
+            <li><a href="#who-we-serve" onClick={closeMenu}>Who we serve</a></li>
+            <li><a href="#vision" onClick={closeMenu}>Vision</a></li>
+          </ul>
+          <button className="nav-cta" onClick={closeMenu}>Book a call</button>
+        </div>
       </div>
     </nav>
   )
@@ -130,7 +150,7 @@ function StatsBanner() {
     off.width = W
     off.height = H
     const oc = off.getContext('2d')
-    const fontSize = Math.min(Math.max(W * 0.3, 260), 420)
+    const fontSize = Math.min(Math.max(W * 0.3, 90), 420)
     oc.fillStyle = '#fff'
     oc.font = `700 ${fontSize}px "Pixelify Sans"`
     oc.textAlign = 'center'
@@ -458,7 +478,9 @@ function Footer() {
       <div className="footer-divider" />
       <div className="footer-brand-bar">
         <div className="footer-brand-bar-inner">
-          <LogoMark size={148} />
+          <div className="footer-logomark">
+            <LogoMark size={148} />
+          </div>
           <div className="footer-wordmark-wrap">
             <span className="footer-wordmark">3PROJECTS</span>
             <sup className="footer-tm">TM</sup>
