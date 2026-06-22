@@ -1103,7 +1103,18 @@
     position: relative;
     height: auto;
     padding: 40px 24px;
-    background: rgba(4, 4, 14, 0.82);
+    background: rgba(6, 6, 18, 0.38);
+    backdrop-filter: blur(44px);
+    -webkit-backdrop-filter: blur(44px);
+  }
+
+  .wwd-panel-label,
+  .wwd-video-headline,
+  .wwd-video-sub,
+  .wwd-card-tag,
+  .wwd-card-title,
+  .wwd-card-body {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
   }
 
   .wwd-panel-grid {
