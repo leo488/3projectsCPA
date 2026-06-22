@@ -1103,6 +1103,7 @@
     position: relative;
     height: auto;
     padding: 40px 24px;
+    background: rgba(4, 4, 14, 0.82);
   }
 
   .wwd-panel-grid {
