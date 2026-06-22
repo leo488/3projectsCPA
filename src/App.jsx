@@ -317,11 +317,9 @@ function WhatWeDo() {
             </p>
           </div>
 
-          {/* Layer 2: video + frosted panel */}
+          {/* Layer 2: photo + frosted panel */}
           <div className="wwd-video-layer" style={{ opacity: videoOpacity }}>
-            <video autoPlay muted loop playsInline className="wwd-video">
-              <source src="/video/business.mp4" type="video/mp4" />
-            </video>
+            <img src="/video/business.jpg" alt="" className="wwd-video" />
             <div className="wwd-video-panel">
               <div className="wwd-panel-grid">
                 <div className="wwd-panel-main">
