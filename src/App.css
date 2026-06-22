@@ -168,11 +168,13 @@
 }
 
 .btn-secondary {
+  display: inline-block;
   padding: 13px 28px;
   background: #fff;
   color: #001d6c;
   font-size: 15px;
   font-weight: 600;
+  text-align: center;
   border-radius: 4px;
   border: none;
   transition: background 0.15s;
@@ -383,14 +385,6 @@
   gap: 10px;
 }
 
-.wwd-card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
 .wwd-card-tag {
   font-size: 10px;
   font-weight: 600;
@@ -398,20 +392,6 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
   display: block;
-}
-
-.wwd-card-link {
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  white-space: nowrap;
-  opacity: 0.8;
-  transition: opacity 0.15s;
-}
-
-.wwd-card-link:hover {
-  opacity: 1;
 }
 
 .wwd-card-title {
@@ -1058,13 +1038,21 @@
     padding: 40px 0 0;
   }
 
+  .footer-brand-bar-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
   .footer-logomark svg {
-    width: 76px !important;
+    width: clamp(56px, 18vw, 120px) !important;
     height: auto !important;
   }
 
   .footer-wordmark {
-    font-size: clamp(48px, 9vw, 110px);
+    font-size: clamp(40px, 13vw, 96px);
+    white-space: normal;
+    text-align: center;
   }
 }
 
@@ -1153,20 +1141,14 @@
     gap: 28px;
   }
 
-  .footer-brand-bar-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
+  .stats-banner {
+    height: 480px;
+    border-radius: 0;
   }
 
-  .footer-logomark svg {
-    width: 64px !important;
-  }
-
-  .footer-wordmark {
-    font-size: clamp(48px, 14vw, 80px);
-    white-space: normal;
-    text-align: center;
+  .stats-person {
+    height: 440px;
+    bottom: 0;
   }
 }
 
@@ -1187,12 +1169,11 @@
   }
 
   .stats-banner {
-    height: 320px;
+    height: 440px;
   }
 
   .stats-person {
-    height: 360px;
-    bottom: -60px;
+    height: 400px;
   }
 
   .intro-section {
@@ -1230,14 +1211,6 @@
 
   .site-footer {
     padding: 40px 20px 0;
-  }
-
-  .footer-logomark svg {
-    width: 56px !important;
-  }
-
-  .footer-wordmark {
-    font-size: clamp(40px, 16vw, 64px);
   }
 }
 

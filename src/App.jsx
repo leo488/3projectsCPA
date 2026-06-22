@@ -93,7 +93,7 @@ function Hero() {
         </p>
         <div className="hero-actions">
           <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">Book a 10-minute call</a>
-          <button className="btn-secondary">See how it works</button>
+          <a href="#how-it-works" className="btn-secondary">See how it works</a>
         </div>
       </div>
     </section>
@@ -152,7 +152,7 @@ function StatsBanner() {
     off.width = W
     off.height = H
     const oc = off.getContext('2d')
-    const fontSize = Math.min(Math.max(W * 0.3, 90), 420)
+    const fontSize = Math.min(Math.max(W * 0.42, 90), 420)
     oc.fillStyle = '#fff'
     oc.font = `700 ${fontSize}px "Pixelify Sans"`
     oc.textAlign = 'center'
@@ -216,7 +216,7 @@ function StatsBanner() {
 
 function PartnerModel() {
   return (
-    <section className="partner-model">
+    <section className="partner-model" id="how-it-works">
       <div className="pm-container">
         <div className="pm-header">
           <span className="pm-label">The Partner Model</span>
@@ -337,10 +337,7 @@ function WhatWeDo() {
                 </div>
 
                 <div className="wwd-panel-card">
-                  <div className="wwd-card-meta">
-                    <span className="wwd-card-tag">Capability / Architecture</span>
-                    <a href="#" className="wwd-card-link">See the model →</a>
-                  </div>
+                  <span className="wwd-card-tag">Capability / Architecture</span>
                   <h3 className="wwd-card-title">Map the systems behind the business.</h3>
                   <p className="wwd-card-body">Data, workflows and tooling — charted, then re-architected toward a target state worth building.</p>
                 </div>
@@ -426,7 +423,7 @@ function LogoMark({ size = 100 }) {
 
 function CtaSection() {
   return (
-    <section className="cta-final">
+    <section className="cta-final" id="vision">
       <div className="cta-final-container">
         <div className="cta-final-left">
           <span className="cta-final-label">Partner Program</span>
@@ -461,15 +458,15 @@ function Footer() {
         <nav className="footer-nav">
           <div className="footer-col">
             <span className="footer-col-title">Partnership</span>
-            <a href="#">How it works</a>
-            <a href="#">What we deliver</a>
-            <a href="#">Our vision</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#what-we-do">What we deliver</a>
+            <a href="#vision">Our vision</a>
           </div>
           <div className="footer-col">
             <span className="footer-col-title">Company</span>
-            <a href="#">Who we serve</a>
-            <a href="#">Contact</a>
-            <a href="#">Careers</a>
+            <a href="#who-we-serve">Who we serve</a>
+            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">Contact</a>
+            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">Careers</a>
           </div>
           <div className="footer-col footer-col--cta">
             <span className="footer-col-title">Get Started</span>
