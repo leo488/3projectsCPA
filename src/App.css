@@ -8,7 +8,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(0, 18, 72, 0.65);
+  background: rgba(0, 18, 72, 0.92);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -55,6 +55,7 @@
 }
 
 .nav-cta {
+  display: inline-block;
   margin-left: auto;
   padding: 10px 24px;
   background: #0055ff;
@@ -150,11 +151,13 @@
 }
 
 .btn-primary {
+  display: inline-block;
   padding: 13px 28px;
   background: #0055ff;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
+  text-align: center;
   border-radius: 4px;
   border: none;
   transition: background 0.15s;
@@ -218,6 +221,7 @@
 }
 
 .intro-btn {
+  display: inline-block;
   padding: 14px 28px;
   background: #fff;
   color: #0d1540;
@@ -1055,12 +1059,12 @@
   }
 
   .footer-logomark svg {
-    width: 84px !important;
+    width: 76px !important;
     height: auto !important;
   }
 
   .footer-wordmark {
-    font-size: clamp(56px, 13vw, 100px);
+    font-size: clamp(48px, 9vw, 110px);
   }
 }
 
@@ -1110,6 +1114,16 @@
     height: auto;
     padding: 32px 24px;
   }
+
+  .wwd-panel-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .wwd-panel-main {
+    grid-column: auto;
+    padding-bottom: 24px;
+  }
 }
 
 /* ── Mobile (≤ 640px) ── */
@@ -1137,6 +1151,22 @@
   .footer-nav {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .footer-brand-bar-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-logomark svg {
+    width: 64px !important;
+  }
+
+  .footer-wordmark {
+    font-size: clamp(48px, 14vw, 80px);
+    white-space: normal;
+    text-align: center;
   }
 }
 
@@ -1202,19 +1232,12 @@
     padding: 40px 20px 0;
   }
 
-  .footer-brand-bar-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
   .footer-logomark svg {
-    width: 60px !important;
+    width: 56px !important;
   }
 
   .footer-wordmark {
-    font-size: clamp(44px, 17vw, 72px);
-    white-space: normal;
+    font-size: clamp(40px, 16vw, 64px);
   }
 }
 

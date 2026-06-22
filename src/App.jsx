@@ -3,6 +3,8 @@ import './App.css'
 import imageHero from './assets/imageHero.png'
 import footerWoman from './assets/footer_womanImage.svg'
 
+const BOOKING_LINK = 'https://calendly.com/victory-ihongbe-3projects/30min'
+
 function Logo({ textFill = 'white' }) {
   return (
     <svg width="140" height="29" viewBox="0 0 1089 226" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="3PROJECTS">
@@ -74,7 +76,7 @@ function Navbar() {
             <li><a href="#who-we-serve" onClick={closeMenu}>Who we serve</a></li>
             <li><a href="#vision" onClick={closeMenu}>Vision</a></li>
           </ul>
-          <button className="nav-cta" onClick={closeMenu}>Book a call</button>
+          <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="nav-cta" onClick={closeMenu}>Book a call</a>
         </div>
       </div>
     </nav>
@@ -90,7 +92,7 @@ function Hero() {
           We architect enterprise transformation for the firms you advise. You make the introduction and stay the trusted advisor. The recurring upside is yours.
         </p>
         <div className="hero-actions">
-          <button className="btn-primary">Book a 10-minute call</button>
+          <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">Book a 10-minute call</a>
           <button className="btn-secondary">See how it works</button>
         </div>
       </div>
@@ -260,7 +262,7 @@ function IntroSection() {
             No pitch, no pressure. Ten minutes to see exactly how the
             partner revenue model works for your firm.
           </p>
-          <button className="intro-btn">Book a call →</button>
+          <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="intro-btn">Book a call →</a>
         </div>
         <div className="intro-right">
           <div className="intro-timer">
@@ -434,7 +436,7 @@ function CtaSection() {
           <p className="cta-final-sub">
             Bring enterprise-grade transformation to the clients who already trust you. Keep the relationship. Earn the upside.
           </p>
-          <button className="btn-primary">Book a 10-minute call</button>
+          <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">Book a 10-minute call</a>
         </div>
         <div className="cta-final-right">
           <img src={footerWoman} alt="" className="cta-final-image" />
@@ -471,7 +473,7 @@ function Footer() {
           </div>
           <div className="footer-col footer-col--cta">
             <span className="footer-col-title">Get Started</span>
-            <button className="footer-book-btn">Book a call</button>
+            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="footer-book-btn">Book a call</a>
           </div>
         </nav>
       </div>
